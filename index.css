@@ -72,3 +72,9 @@ img #family_picture {
   display: block;
   object-fit: contain;
 }
+
+@media screen only and (max width: 480) { .about_me, p { margin: 2px;}}
+
+
+
+
