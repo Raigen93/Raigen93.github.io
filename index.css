@@ -67,8 +67,8 @@ h5 {
 }
 
 img #family_picture {
-  max-wdith: 100%;
-  height: auto;
+  width: auto;
+  max-height: 100%;
   display: block;
 }
 
