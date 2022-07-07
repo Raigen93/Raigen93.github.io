@@ -32,8 +32,6 @@ h3 {
 
 ul {
   font-style: italic;
-  display: flex;
-  flex-wrap: wrap;
 }
 
 ul li {
@@ -47,8 +45,11 @@ ul li {
 
 p {
   position: relative;
-  margin: 30px;
   text-indent: 1em;
+  text-align: justify;
+  display: block;
+  margin: auto;
+  padding: 1rem;
 }
 
 h5 {
