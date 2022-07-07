@@ -72,4 +72,4 @@ div .container {
   margin: auto;
 }
 
-@media screen only and (max width: 480) { .about_me, p { margin: 2px;}}
+@media screen only and (max width: 480) { * { margin: auto;}}
