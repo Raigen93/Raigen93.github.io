@@ -61,20 +61,15 @@ h5 {
 }
 
 .container {
-  display: flex;
-  justify-content: center;
-  max-width: 350px; 
+  width: 50%;
+  height: 200px;
+  overflow: hidden; 
 }
 
 img #family_picture {
-  max-in-line-size: 100%;
-  block-size: auto;
+  max-wdith: 100%;
+  height: auto;
   display: block;
-  object-fit: contain;
 }
 
 @media screen only and (max width: 480) { .about_me, p { margin: 2px;}}
-
-
-
-
