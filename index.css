@@ -12,6 +12,7 @@ header {
   background-color: hsl(210, 50%, 50%);
   position: relative;
   border: 20px;
+  border-radius: 50%;
   margin: 10px;
   font-size: 2rem;
   font-style: italic;
@@ -60,16 +61,15 @@ h5 {
   margin-bottom: 1em;
 }
 
-.container {
-  width: 75%;
-  height: 300px;
+div .container {
   overflow: hidden; 
 }
 
-img #family_picture {
-  width: auto;
-  max-height: 100%;
+.container #family_picture {
+  max-width: 100%;
+  height: auto;
   display: block;
+  margin: auto;
 }
 
 @media screen only and (max width: 480) { .about_me, p { margin: 2px;}}
