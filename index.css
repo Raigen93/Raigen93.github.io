@@ -1,9 +1,14 @@
 * {
   font-family: "Trebuchet MS", sans-serif;
-  background-color: hsl(10, 30%, 90%);
+  background-color: hsl(50, 50%, 90%);
 }
 
-header {
+body {
+  max-width: 80%;
+  margin: auto;
+}
+
+header h1{
   text-align: center;
   background-color: hsl(210, 50%, 50%);
   position: relative;
@@ -14,14 +19,16 @@ header {
   font-style: italic;
 }
 
-body {
-  max-width: 900px;
-  margin: auto;
+h2 {
+  font-size: 2rem;
+  margin: 50px;
 }
 
-h2 {
-  font-size: 1rem;
-  margin: 50px;
+#contact {
+  border: 4px solid darkcyan;
+  min-width: 20%;
+  max-width: 50%;
+  margin: 2em auto auto;
 }
 
 h3 {
@@ -53,25 +60,47 @@ p {
   padding: 1rem;
 }
 
-h5 {
+h4 {
   text-align: center;
   margin-bottom: 1em;
 }
 
-div .container {
-  overflow: hidden; 
+#photos {
+  display: inline-flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  align-items: center;
 }
 
-.container #family_picture {
+#photos .container {
+  display: flex;
+  flex-direction: column;
+  max-width: 50%;
+  justify-content: center;
+  align-items: center;
+}
+
+#photos .container img {
+  max-width: 60%;
+  height: auto;
+}
+
+#projects {
+  margin: 5rem;
+  border: 0.05rem dashed midnightblue;
+  display: flex;
+  flex-direction: column;
+}
+
+#projects .container {
+  margin: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#projects .container img {
   max-width: 100%;
   height: auto;
-  display: block;
-  margin: auto;
-}
-
-#contact {
-  border: 4px solid darkcyan;
-  mind-width: 20%;
-  max-width: 50%;
-  margin: 2em auto auto;
 }
