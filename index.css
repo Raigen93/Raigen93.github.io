@@ -19,14 +19,13 @@ header h1{
   background-color: hsl(210, 50%, 50%);
   position: relative;
   border: 1rem;
-  margin: 0.5rem;
   font-size: 2rem;
   font-style: italic;
 }
 
 h2 {
   font-size: 2rem;
-  margin: 50px;
+  margin: 4rem;
 }
 
 #contact {
@@ -108,4 +107,17 @@ h4 {
 #projects .container img {
   max-width: 100%;
   height: auto;
+}
+
+@media only screen and (max-width: 750px) {
+  #projects {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  #photos .container {
+    max-width: 90%;
+  }
+  #photos .container img {
+    max-width: 90%;
+  }
 }
