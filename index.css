@@ -11,7 +11,7 @@ html {
 body {
   margin: auto;
   background-color: black;
-  opacity: 0.8;
+  opacity: 0.9;
 }
 
 header h1{
@@ -79,14 +79,20 @@ h4 {
 #photos .container {
   display: flex;
   flex-direction: column;
-  max-width: 50%;
+  max-width: 30%;
   justify-content: center;
   align-items: center;
+  transition: all 3s ease;
 }
 
 #photos .container img {
-  max-width: 60%;
+  max-width: 100%;
   height: auto;
+}
+
+#photos .container:hover {
+  max-width: 50%;
+  opacity: 100%;
 }
 
 #projects {
