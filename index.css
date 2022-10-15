@@ -1,6 +1,6 @@
 html {
   font-family: "Trebuchet MS", sans-serif;
-  color: blanchedalmond;
+  color: black;
   background: url("img/background-portfolio.jpg") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -10,8 +10,9 @@ html {
 
 body {
   margin: auto;
-  background-color: black;
+  background-color: white;
   opacity: 0.9;
+  width: 65%;
 }
 
 header h1{
@@ -26,6 +27,17 @@ header h1{
 h2 {
   font-size: 2rem;
   margin: 4rem;
+}
+
+#icons {
+  display: flex;
+  justify-content: space-around;
+}
+
+.icon {
+  height: 50px;
+  width: 50px;
+  border-radius: 10px;
 }
 
 #contact {
@@ -46,14 +58,6 @@ h3 {
   justify-content: space-around;
 }
 
-ul {
-  font-style: italic;
-}
-
-ul li {
-  font-style: normal;
-}
-
 p {
   border: 0.1rem dashed midnightblue;
   position: relative;
@@ -69,34 +73,8 @@ h4 {
   margin-bottom: 1em;
 }
 
-#photos {
-  display: inline-flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  align-items: center;
-}
-
-#photos .container {
-  display: flex;
-  flex-direction: column;
-  max-width: 30%;
-  justify-content: center;
-  align-items: center;
-  transition: all 3s ease;
-}
-
-#photos .container img {
-  max-width: 100%;
-  height: auto;
-}
-
-#photos .container:hover {
-  max-width: 50%;
-  opacity: 100%;
-}
-
 #projects {
-  margin: 5rem;
+  margin: 2.5rem;
   border: 0.05rem dashed midnightblue;
   display: flex;
   flex-direction: column;
@@ -113,6 +91,7 @@ h4 {
 #projects .container img {
   max-width: 100%;
   height: auto;
+  background-color: black;
 }
 
 @media only screen and (max-width: 750px) {
@@ -120,10 +99,8 @@ h4 {
     margin-left: 0;
     margin-right: 0;
   }
-  #photos .container {
-    max-width: 90%;
-  }
-  #photos .container img {
-    max-width: 90%;
+
+  body {
+    width: 95%;
   }
 }
