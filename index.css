@@ -1,11 +1,13 @@
 html {
   font-family: "Trebuchet MS", sans-serif;
   color: black;
-  background: url("img/background-portfolio.jpg") no-repeat center center fixed;
+  background-image: url("img/grey background.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-  background-size: cover;
 }
 
 body {
