@@ -37,6 +37,24 @@ h2 {
   justify-content: space-around;
 }
 
+img {
+  margin: 5px;
+}
+
+.statRoll {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 0;
+}
+
+.statRoll_m {
+  width: 25%;
+  padding: 0;
+  height: auto;
+}
+
 .icon {
   height: 50px;
   width: 50px;
