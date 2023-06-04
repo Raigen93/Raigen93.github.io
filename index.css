@@ -35,14 +35,34 @@ h2 {
 #icons {
   display: flex;
   justify-content: space-around;
+  flex-wrap: wrap;
 }
 
 img {
   margin: 5px;
 }
 
+.flex_imgs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.flex_imgs div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.flex_imgs div img {
+  margin: auto;
+  height: auto;
+  width: 95%;
+}
+
 .project {
   background-color: white;
+  border-bottom: 1px solid black;
 }
 
 .statRoll {
@@ -61,8 +81,8 @@ img {
 }
 
 .icon {
-  height: 50px;
-  width: 50px;
+  height: 60px;
+  width: 60px;
   border-radius: 10px;
 }
 
