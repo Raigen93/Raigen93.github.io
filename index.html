@@ -1,6 +1,24 @@
 <!doctype html>
 <html lang="en">
+<script>
+  function toggleActive(button) {
+    let toggles = document.querySelectorAll(".dropdown");
+    let payrollButton = document.getElementById("payrollspan");
+    let statButton = document.getElementById("statrollspan");
+    let calcButton = document.getElementById("calcspan");
+    let gameButton = document.getElementById("gamespan");
 
+    toggles.forEach(toggle => {
+      if(toggle.id !== button) {
+        toggle.style.display = "none";
+      } else if(toggle.style.display === "flex") {
+        toggle.style.display = "none";
+      } else {
+        toggle.style.display = "flex";
+      }
+    });
+  }
+</script>
 <head>
   <meta charset="utf-8">
   <title>Alec J Griffiths</title>
@@ -9,12 +27,12 @@
 
   <link rel="manifest" href="site.webmanifest">
 
-  <script src="script.js"></script>
-
   <link rel="stylesheet" href="index.css">
 
   <meta name="theme-color" content="#fafafa">
 </head>
+
+
 
 <header>
 
@@ -72,9 +90,15 @@
     Some Projects I have been working on:
   </h2>
 
-  <section id="payrollapp" class="project">
-    <div class="container">
-      <h3> A workplace management application that allows users to submit time-sheets and request time off.</h3>
+  <div class="container">
+    <div id="payrollspan" class="proj_button" onclick="toggleActive(`payrollapp`)">
+      <h3>
+        A workplace management application that allows users to submit time-sheets and request time off.
+      </h3>
+    </div>
+      <section id="payrollapp" class="project dropdown">
+
+    <div class="container ">
       <p>
         This project utilizes PHP and the Laravel framework, with HTML, CSS, JavaScript, and a MySQL database.
         <br/>
@@ -97,7 +121,6 @@
           <img src="img/Screenshot%20(138).png">
         </div>
 
-
       </div>
 
       <p>
@@ -107,74 +130,72 @@
     </div>
   </section>
 
-  <section id="statRoller" class="project">
-  <div class="container">
+    <span id="statrollspan" class="proj_button" onclick="toggleActive(`statRoller`)">
+      <h3>
+        A Stat Builder for use with 5th Edition Dungeons and Dragons.
+      </h3>
+    </span>
+      <section id="statRoller" class="project dropdown">
+      <div class="container">
 
-    <h3>
-      A Stat Builder for use with 5th Edition Dungeons and Dragons.
-    </h3>
-    <p>
-      This project features use of HTML, CSS, and JavaScript to function.
-      <br/>
-    </p>
+        <p>
+          This project features use of HTML, CSS, and JavaScript to function.
+          <br/>
+        </p>
 
-    <div class="statRoll">
-      <img src="img/Screenshot%20(32).png" />
-      <img src="img/Screenshot%20(33).png" />
-    </div>
+        <div class="statRoll">
+          <img src="img/Screenshot%20(32).png" />
+          <img src="img/Screenshot%20(33).png" />
+        </div>
 
         <h2>Mobile Views</h2>
-      <div class="statRoll">
-        <img class="statRoll_m" src="img/statRollMobile.png" />
-        <img class="statRoll_m" src="img/pointBuy%20mobile.jpg" />
+        <div class="statRoll">
+          <img class="statRoll_m" src="img/statRollMobile.png" />
+          <img class="statRoll_m" src="img/pointBuy%20mobile.jpg" />
+        </div>
+        <a href="https://raigen93.GitHub.io/StatRoller" rel="noreferrer noopener" target="_blank">View it Here</a>
       </div>
-    <a href="https://raigen93.GitHub.io/StatRoller" rel="noreferrer noopener" target="_blank">View it Here</a>
-  </div>
-</section>
+    </section>
 
-  <section id="calculator" class="project">
-  <div class="container">
+    <span id="calcspan" class="proj_button" onclick="toggleActive(`calculator`)">
+       <h3>
+         A Calculator to be used with Pipe Fittings.
+       </h3>
+    </span>
+    <section id="calculator" class="project dropdown">
+      <div class="container">
 
-    <h3>A Calculator to be used with Pipe Fittings.</h3>
-    <p>This project is able to calculate:
-      <br>Take-outs for both 90 and 45 degree elbows,
-      <br>Take-outs for runs of pipe that receive fittings on one, or both, end(s),
-      <br>Take-outs for runs of pipe that change elevation from end to end (Rise-Runs).
-    </p>
+        <p>This project is able to calculate take outs for:
+          <br>Both 90 and 45 degree elbows,
+          <br>Runs of pipe that receive fittings on one, or both, end(s),
+          <br>Runs of pipe that change elevation from end to end (Rise-Runs).
+        </p>
 
-      <div>
-        <img src="img/Runs.png"/>
-        <img src="img/Rise_runs.png"/>
+        <div>
+          <img src="img/Runs.png"/>
+          <img src="img/Rise_runs.png"/>
+        </div>
+        <a href="https://raigen93.github.io/pipeTakeoff/" rel="noreferrer noopener" target="_blank">View it Here</a>
       </div>
-    <a href="https://raigen93.github.io/pipeTakeoff/" rel="noreferrer noopener" target="_blank">View it Here</a>
-  </div>
-</section>
+    </section>
 
-  <section id="textGame" class="project">
-  <div class="container">
+    <span id="gamespan" class="proj_button" onclick="toggleActive(`textGame`)">
+      <h3>
+        An excerpt of code from a text-adventure I have been working on, using Java.
+      </h3>
+    </span>
+    <section id="textGame" class="project dropdown">
+      <div class="container">
 
-    <h3>
-      An excerpt of code from a text-adventure I have been working on, using Java.
-    </h3>
+        <img src="img/text%20adventure.png" alt="image of Java code" id="textAdventure"/>
 
-    <img src="img/text%20adventure.png" alt="image of Java code" id="textAdventure"/>
+        <p>
+          This is part of a function that shows what items your character is carrying, only showing the item name and quantity, instead
+          of logging each instance of the item.
+        </p>
 
-    <p>
-      This is part of a function that shows what items your character is carrying, only showing the item name and quantity, instead
-      of logging each instance of the item.
-    </p>
-
-  </div>
-</section>
-
-
-  <div class="container project">
-
-    <h3>
-      A JavaScript program for randomly creating simple stories.
-    </h3>
-
-    <img src="img/JS%20syntax.png" alt="image showing use of JS" id="js_syntax"/>
+      </div>
+    </section>
 
   </div>
 
