@@ -81,6 +81,12 @@ img {
   cursor: pointer;
 }
 
+.proj_button h3 {
+  text-align: left;
+  padding: 10px;
+  text-indent: 5px;
+}
+
 .statRoll {
   width: 100%;
   display: flex;
