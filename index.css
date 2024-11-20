@@ -1,7 +1,7 @@
 html {
   font-family: "Trebuchet MS", sans-serif;
   background-color: #000113;
-
+  color: whitesmoke;
 }
 
 body {
@@ -19,8 +19,7 @@ body {
 }
 
 .show {
-  transition: width 1s;
-  width: 130px;
+  width: 132px;
 }
 
 .emblem_holder {
@@ -42,7 +41,6 @@ body {
 header {
   border-bottom: 1px solid red;
   min-height: 50px;
-  color: white;
   background-color: #00010b;
   display: flex; 
   justify-content: space-between;
@@ -57,34 +55,71 @@ header {
   width: 50%;
 }
 
+.icon {
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 3px;
+  overflow: hidden;
+}
+
+.contact_holder {
+  display: flex;
+  width: 25%;
+}
+
+.spacer {
+  width: 25%;
+}
+
 .contact {
   display: flex;
   align-items: center;
   justify-content: start;
-  width: 25%;
+  background-color: #181a30;
+  border-radius: 5px;
+  margin: 3px;
 
   .emblem {
     cursor: pointer;
   }
 }
 
+#nav_menu_btn {
+  display: none;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  background-color: #00010b;
+  width: 100%;
+}
+
 @media only screen and (max-width: 750px) {
   header {
-    flex-direction: column;
+    flex-direction: column-reverse;
     padding-bottom: 8px;
 
     .header_container {
       width: 100%;
     }
 
-    .emblem_holder, .contact {
+    .emblem_holder, .contact_holder {
       width: 100%;
       margin: 5px auto;
       justify-content: space-around;
     }
+
+    .spacer {
+      display: none;
+    }
   }
 
-  
+  #nav_menu_btn {
+    display: block;
+  }
 }
 /* header h1{
   text-align: center;
