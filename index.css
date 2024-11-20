@@ -1,23 +1,92 @@
 html {
   font-family: "Trebuchet MS", sans-serif;
-  color: black;
-  background-image: url("img/grey background.jpg");
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
+  background-color: #000113;
+
 }
 
 body {
   margin: auto;
-  background-color: white;
-  width: 80%;
   font-size: 1.25rem;
+  background-color: inherit;
 }
 
-header h1{
+.email, .github {
+  transition: width 1s;
+  font-size: 0.6em;
+  overflow: hidden;
+  width: 0;
+  cursor: pointer;
+}
+
+.show {
+  transition: width 1s;
+  width: 130px;
+}
+
+.emblem_holder {
+  grid-column: 6;
+  display: inline-flex;
+  padding: 4px;
+  align-items: center;
+  justify-content: end;
+  width: 25%;
+} 
+
+.emblem {
+  height: 22px;
+  width: 22px;
+  border-radius: 25%;
+  margin: 3px 5px;
+}
+
+header {
+  border-bottom: 1px solid red;
+  min-height: 50px;
+  color: white;
+  background-color: #00010b;
+  display: flex; 
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header_container {
+  display: inline-flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 5px auto;
+  width: 50%;
+}
+
+.contact {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  width: 25%;
+
+  .emblem {
+    cursor: pointer;
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  header {
+    flex-direction: column;
+    padding-bottom: 8px;
+
+    .header_container {
+      width: 100%;
+    }
+
+    .emblem_holder, .contact {
+      width: 100%;
+      margin: 5px auto;
+      justify-content: space-around;
+    }
+  }
+
+  
+}
+/* header h1{
   text-align: center;
   background-color: hsl(210, 50%, 50%);
   position: relative;
@@ -177,4 +246,4 @@ h4 {
   body {
     width: 95%;
   }
-}
+} */

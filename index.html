@@ -17,6 +17,25 @@
         toggle.style.display = "flex";
       }
     });
+  };
+
+  function show_link(to_show) {
+    let element = document.getElementById(to_show);
+
+    if (!element.classList.contains('show')) {
+      if (to_show == "email") {
+        element.innerHTML = "<a style='color: white;' href='mailto:raigen.griff@gmail.com' >raigen.griff@gmail.com</a>";
+      }
+      element.classList.add('show');
+    } else {
+      element.classList.remove('show');
+
+      if (to_show == "email") {
+        setTimeout(() => {
+          element.innerHTML = "";
+        }, 1000);
+      }
+    }
   }
 </script>
 <head>
@@ -25,189 +44,36 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link rel="manifest" href="site.webmanifest">
-
   <link rel="stylesheet" href="index.css">
 
-  <meta name="theme-color" content="#fafafa">
 </head>
 
-
-
-<header>
-
-  <h1>
-    Alec J Griffiths
-  </h1>
-
-</header>
-<body>
-
-<h2>
-  Combo-Welder / Web-Developer
-</h2>
-
-<div id="icons">
-
-  <img class="icon" src="img/html_Icon.webp"/>
-  <img class="icon" src="img/CSS_icon.png"/>
-  <img class="icon" src="img/JavaScript_Icon.png"/>
-  <img class="icon" src="img/php_icon.png"/>
-  <img class="icon" src="img/laravel_icon.png"/>
-  <img class="icon" src="img/mySQL_icon.png"/>
-
-</div>
-
-<section id="about_me">
-
-  <h3>A little bit about me:</h3>
-
-  <p>
-
-    Hello there, my name is Alec James Griffiths. I am a web developer based out of the Jacksonville Florida area. I currently
-    work as a First Class Combo Pipe-Welder for a company that serves and provides products for the Tech Industry. In my spare time,
-    I enjoy fishing trips with my two sons and my daughter, and the occasional game of Dungeons & Dragons.
-
-  </p>
-
-</section>
-
-<section id="goals">
-
-  <ul>Some of my goals are:
-
-    <li>Acquire a position that allows me to utilize and expand upon my knowledge of HTML, CSS, PHP, and JavaScript. </li>
-
-    <li>Utilize and expand upon my knowledge of Laravel.</li>
-
-  </ul>
-
-</section>
-
-<section id="projects">
-
-  <h2>
-    Some Projects I have been working on:
-  </h2>
-
-  <div class="container">
-    <div id="payrollspan" class="proj_button" onclick="toggleActive(`payrollapp`)">
-      <h3>
-        A workplace management application that allows users to submit time-sheets and request time off.
-      </h3>
+<body style="height: 1200px;">
+  <header>
+    <div class="contact">
+      <img class="emblem" src="img/gmail-icon-2020-.svg" alt="GMail" onclick="show_link('email')">
+        <span class="email" id="email">raigen.griff@gmail.com</span>
+      
+      <img class="emblem" src="img/github-icon-2.svg" alt="GitHub" onclick="show_link('github')"/>
+        <span class="github" id="github">Raigen93</span>
     </div>
-      <section id="payrollapp" class="project dropdown">
 
-    <div class="container ">
-      <p>
-        This project utilizes PHP and the Laravel framework, with HTML, CSS, JavaScript, and a MySQL database.
-        <br/>
-        Users are able to submit their daily time-sheet, with the hours being automatically billed to a work order. Users with
-        the correct permissions can create new work orders, view budget hours, and approve/deny time off requests.
-      </p>
-
-      <div class="flex_imgs">
-
-        <div>
-          <h4>A view of a User's ability to submit a daily time-sheet.</h4>
-          <img src="img/Screenshot%20(136).png">
-        </div>
-        <div>
-          <h4>Showing current projects and budget hours.</h4>
-          <img src="img/Screenshot%20(137).png">
-        </div>
-        <div>
-          <h4>Submitting time-off requests.</h4>
-          <img src="img/Screenshot%20(138).png">
-        </div>
-
-      </div>
-
-      <p>
-        This project is currently live <a href="https://www.raigengriff.com">here</a>.
-      </p>
-
+    <div class="header_container">
+      <span>Alec J Griffiths</span>
+      <span>Full-Stack Web Developer</span>
     </div>
-  </section>
 
-    <span id="statrollspan" class="proj_button" onclick="toggleActive(`statRoller`)">
-      <h3>
-        A Stat Builder for use with 5th Edition Dungeons and Dragons.
-      </h3>
-    </span>
-      <section id="statRoller" class="project dropdown">
-      <div class="container">
+    <div class="emblem_holder">
+      <img class="emblem" src="img/php_icon.png" alt="PHP" />
+      <img class="emblem" src="img/JavaScript_Icon.png" alt="JavaScript" />
+      <img class="emblem" src="img/svelte-1.svg" alt="Svelte" />
+      <img class="emblem" src="img/react-2.svg" alt="React">
+      <img class="emblem" src="img/laravel_icon.png" alt="Laravel" />
+      <img class="emblem" src="img/cakephp-1.svg" alt="CakePHP">
+    </div>
+  </header>
 
-        <p>
-          This project features use of HTML, CSS, and JavaScript to function.
-          <br/>
-        </p>
-
-        <div class="statRoll">
-          <img src="img/Screenshot%20(32).png" />
-          <img src="img/Screenshot%20(33).png" />
-        </div>
-
-        <h2>Mobile Views</h2>
-        <div class="statRoll">
-          <img class="statRoll_m" src="img/statRollMobile.png" />
-          <img class="statRoll_m" src="img/pointBuy%20mobile.jpg" />
-        </div>
-        <a href="https://raigen93.GitHub.io/StatRoller" rel="noreferrer noopener" target="_blank">View it Here</a>
-      </div>
-    </section>
-
-    <span id="calcspan" class="proj_button" onclick="toggleActive(`calculator`)">
-       <h3>
-         A Calculator to be used with Pipe Fittings.
-       </h3>
-    </span>
-    <section id="calculator" class="project dropdown">
-      <div class="container">
-
-        <p>This project is able to calculate take outs for:
-          <br>Both 90 and 45 degree elbows,
-          <br>Runs of pipe that receive fittings on one, or both, end(s),
-          <br>Runs of pipe that change elevation from end to end (Rise-Runs).
-        </p>
-
-        <div>
-          <img src="img/Runs.png"/>
-          <img src="img/Rise_runs.png"/>
-        </div>
-        <a href="https://raigen93.github.io/pipeTakeoff/" rel="noreferrer noopener" target="_blank">View it Here</a>
-      </div>
-    </section>
-
-    <span id="gamespan" class="proj_button" onclick="toggleActive(`textGame`)">
-      <h3>
-        An excerpt of code from a text-adventure I have been working on, using Java.
-      </h3>
-    </span>
-    <section id="textGame" class="project dropdown">
-      <div class="container">
-
-        <img src="img/text%20adventure.png" alt="image of Java code" id="textAdventure"/>
-
-        <p>
-          This is part of a function that shows what items your character is carrying, only showing the item name and quantity, instead
-          of logging each instance of the item.
-        </p>
-
-      </div>
-    </section>
-
-  </div>
-
-</section>
-
-<footer>
-<div id="contact">
-  <h4>email: Raigen.Griff@gmail.com</h4>
-
-  <h4><a href="https://github.com/Raigen93">GitHub:Raigen93</a></h4>
-</div>
-</footer>
 </body>
- 
+
+
 </html>
