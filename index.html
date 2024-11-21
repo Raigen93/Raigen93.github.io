@@ -1,5 +1,18 @@
 <!doctype html>
 <html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Alec J Griffiths</title>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="index.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Scope+One&display=swap" rel="stylesheet">
+</head>
+
 <script>
   function toggleActive(button) {
     let toggles = document.querySelectorAll(".dropdown");
@@ -19,43 +32,100 @@
     });
   };
 
+  let disabled_email = false;
+
   function show_link(to_show) {
     let element = document.getElementById(to_show);
 
     if (!element.classList.contains('show')) {
-      if (to_show == "email") {
+      if (to_show == "email" && !disabled_email) {
         element.innerHTML = "<a style='color: white;' href='mailto:raigen.griff@gmail.com' >raigen.griff@gmail.com</a>";
+        element.classList.add('show');
+      } else if (to_show !== "email") {
+        element.classList.add('show');
       }
-      element.classList.add('show');
+
     } else {
       element.classList.remove('show');
 
       if (to_show == "email") {
+        disabled_email = true;
+
         setTimeout(() => {
           element.innerHTML = "";
+          disabled_email = false;
         }, 1000);
       }
     }
   }
+
+
+  let slide_index = 0;
+  let active_slider = 'home';
+
+  function slideshow() {
+    let slides = document.querySelectorAll(`[data-slider="${active_slider}"]`);
+
+    slides.forEach((slide) => slide.classList.remove('active'));
+
+    slides[slide_index].classList.add('active');
+
+    slide_index = (slide_index + 1) % slides.length;
+  }
+
+  setInterval(slideshow, 5000);
+
 </script>
-<head>
-  <meta charset="utf-8">
-  <title>Alec J Griffiths</title>
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <link rel="stylesheet" href="index.css">
-
-</head>
 
 <body>
-  <header>
-    <div class="spacer">
+  <section id="floater"> 
+    <div style="display: flex; flex-direction: column; margin-bottom: 10px; width: 200px;">
+      <h1>Alec J Griffiths</h1>
+      <h5>Web Developer</h5>
     </div>
 
-    <div class="header_container">
-      <span>Alec J Griffiths</span>
-      <span>Full-Stack Web Developer</span>
+    <nav id="main_nav">
+      <ul>
+        <li class="about_link">About Me</li>
+        <li class="project_link">Projects</li>
+        <li class="home_link active">Home</li>
+      </ul>
+    </nav>
+  </section>
+
+  <section id="main">
+    <div class="about_tab"></div>
+    
+    <div class="project_tab"></div>
+    
+    <div class="home_tab">
+      <h4>Hello there, and welcome in!</h4>
+
+      <p>My name is Alec J Griffiths, and I am a Web Developer/Software Engineer based out of Jacksonville, Florida.</p>
+
+      <div class="home_slider">
+        <img class="slide active" src="img/IMG_5515.jpg"  data-slider="home"/>
+        <img class="slide" src="img/IMG_5445.jpg"  data-slider="home"/>
+        <img class="slide" src="img/IMG_4522.jpg"  data-slider="home"/>
+        <img class="slide" src="img/IMG_4289.jpg"  data-slider="home"/>
+        <img class="slide" src="img/IMG_4236.jpg"  data-slider="home"/>
+      </div>
+
+      <p>I enjoy learning new things and working on projects of all types. So, if there is anything you need help building, reach out and let me know!</p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="contact_holder">
+      <div class="contact">
+        <img class="emblem" src="img/gmail-icon-2020-.svg" alt="GMail" onclick="show_link('email')">
+          <span class="email" id="email">raigen.griff@gmail.com</span>
+      </div>
+      
+      <div class="contact">
+        <img class="emblem" src="img/github-icon-2.svg" alt="GitHub" onclick="show_link('github')"/>
+          <span class="github" id="github">Raigen93</span>
+      </div>
     </div>
 
     <div class="emblem_holder">
@@ -83,21 +153,6 @@
         <img class="emblem" src="img/cakephp-1.svg" alt="CakePHP">
       </span>
     </div>
-  </header>
-
-
-  <footer>
-    <div class="contact_holder">
-        <div class="contact">
-          <img class="emblem" src="img/gmail-icon-2020-.svg" alt="GMail" onclick="show_link('email')">
-            <span class="email" id="email">raigen.griff@gmail.com</span>
-        </div>
-        
-        <div class="contact">
-          <img class="emblem" src="img/github-icon-2.svg" alt="GitHub" onclick="show_link('github')"/>
-            <span class="github" id="github">Raigen93</span>
-        </div>
-      </div>
   </footer>
 </body>
 
