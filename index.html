@@ -14,24 +14,6 @@
 </head>
 
 <script>
-  function toggleActive(button) {
-    let toggles = document.querySelectorAll(".dropdown");
-    let payrollButton = document.getElementById("payrollspan");
-    let statButton = document.getElementById("statrollspan");
-    let calcButton = document.getElementById("calcspan");
-    let gameButton = document.getElementById("gamespan");
-
-    toggles.forEach(toggle => {
-      if(toggle.id !== button) {
-        toggle.style.display = "none";
-      } else if(toggle.style.display === "flex") {
-        toggle.style.display = "none";
-      } else {
-        toggle.style.display = "flex";
-      }
-    });
-  };
-
   let disabled_email = false;
 
   function show_link(to_show) {
@@ -39,7 +21,7 @@
 
     if (!element.classList.contains('show')) {
       if (to_show == "email" && !disabled_email) {
-        element.innerHTML = "<a style='color: white;' href='mailto:raigen.griff@gmail.com' >raigen.griff@gmail.com</a>";
+        element.innerHTML = "<a href='mailto:raigen.griff@gmail.com' >raigen.griff@gmail.com</a>";
         element.classList.add('show');
       } else if (to_show !== "email") {
         element.classList.add('show');
@@ -59,18 +41,29 @@
     }
   }
 
+  function change_tab(tab) {
+    let old_tab = document.querySelector(".tab.active");
+    old_tab.classList.remove('active');
+
+    let old_link = document.querySelector(".tab_link.active");
+    old_link.classList.remove('active');
+
+    document.querySelector(`.${tab}_tab.tab`).classList.add('active');
+    document.querySelector(`.${tab}_link.tab_link`).classList.add('active')
+  }
 
   let slide_index = 0;
   let active_slider = 'home';
 
-  function slideshow() {
+  function slideshow(index = null) {
+  
     let slides = document.querySelectorAll(`[data-slider="${active_slider}"]`);
 
     slides.forEach((slide) => slide.classList.remove('active'));
 
-    slides[slide_index].classList.add('active');
+    index == null ? slides[slide_index].classList.add('active') : slides[index].classList.add('active');
 
-    slide_index = (slide_index + 1) % slides.length;
+    slide_index = index == null ? (slide_index + 1) % slides.length: index;
   }
 
   setInterval(slideshow, 5000);
@@ -86,32 +79,59 @@
 
     <nav id="main_nav">
       <ul>
-        <li class="about_link">About Me</li>
-        <li class="project_link">Projects</li>
-        <li class="home_link active">Home</li>
+        <li class="about_link tab_link" onclick="change_tab('about')">About Me</li>
+        <li class="project_link tab_link" onclick="change_tab('project')">Projects</li>
+        <li class="home_link tab_link active" onclick="change_tab('home')">Home</li>
       </ul>
     </nav>
   </section>
 
   <section id="main">
-    <div class="about_tab"></div>
+    <div class="about_tab tab">
+      <p class="blurb">
+        Originally from Iowa, I have lived in the Orange Park and Oakleaf Plantation areas of Clay County, Florida, for many years. 
+        After nearly a decade as a professional welder, I decided to pivot my career and dedicated myself to studying web development while raising three children.
+     
+        When I'm not coding, I love spending quality time with my children by taking them fishing, baking together, and exploring arts and crafts.
+        I'm also an avid tabletop gamer and enjoy the occasional session of Dungeons and Dragons.
+      </p>
+
+      <span style="margin-left: 10px;">Some things I have worked with are:</span>
+      <div style="margin-left: 20px; color: goldenrod;">
+        <label for="JS_list">JavaScript</label>
+        <ul name="JS_list" style="margin-top: 0;">
+          <li>jQuery</li>
+          <li>Svelte</li>
+          <li>React</li>
+        </ul>
+
+        <label for="PHP_list">PHP</label>
+        <ul name="PHP_list" style="margin-top: 0;">
+          <li>CakePHP</li>
+          <li>Laravel</li>
+        </ul>
+      </div>
+    </div>
     
-    <div class="project_tab"></div>
+    <div class="project_tab tab">
+      This is the project tab.
+    </div>
     
-    <div class="home_tab">
-      <h4>Hello there, and welcome in!</h4>
+    <div class="home_tab tab active">
+      <h4 style="margin-left: 4px;">Hello there, and welcome in!</h4>
 
       <p>My name is Alec J Griffiths, and I am a Web Developer/Software Engineer based out of Jacksonville, Florida.</p>
 
       <div class="home_slider">
-        <img class="slide active" src="img/IMG_5515.jpg"  data-slider="home"/>
-        <img class="slide" src="img/IMG_5445.jpg"  data-slider="home"/>
-        <img class="slide" src="img/IMG_4522.jpg"  data-slider="home"/>
-        <img class="slide" src="img/IMG_4289.jpg"  data-slider="home"/>
-        <img class="slide" src="img/IMG_4236.jpg"  data-slider="home"/>
+        <img class="slide active" src="img/IMG_5515.jpg"  data-slider="home" onclick="slideshow(0)"/>
+        <img class="slide" src="img/IMG_5445.jpg"  data-slider="home" onclick="slideshow(1)"/>
+        <img class="slide" src="img/IMG_4522.jpg"  data-slider="home" onclick="slideshow(2)"/>
+        <img class="slide" src="img/IMG_4289.jpg"  data-slider="home" onclick="slideshow(3)"/>
+        <img class="slide" src="img/IMG_4236.jpg"  data-slider="home" onclick="slideshow(4)"/>
       </div>
 
-      <p>I enjoy learning new things and working on projects of all types. So, if there is anything you need help building, reach out and let me know!</p>
+      <p class="blurb">I currently work in the financial tech industry, while in my free time I contribute to <a href="https://tinydark.com/" target="_blank">Tinydark Studio</a> and the studio's proprietary GAM3 engine.
+        I enjoy working on a variety of projects and learning knew things, so if there's anything you need help with feel free to contact me.</p>
     </div>
   </section>
 
@@ -119,12 +139,17 @@
     <div class="contact_holder">
       <div class="contact">
         <img class="emblem" src="img/gmail-icon-2020-.svg" alt="GMail" onclick="show_link('email')">
-          <span class="email" id="email">raigen.griff@gmail.com</span>
+          <span class="email" id="email"></span>
       </div>
       
-      <div class="contact">
+      <div class="contact delay_1">
         <img class="emblem" src="img/github-icon-2.svg" alt="GitHub" onclick="show_link('github')"/>
-          <span class="github" id="github">Raigen93</span>
+          <span class="github" id="github"><a href="https://github.com/Raigen93" target="_blank">Raigen93</a></span>
+      </div>
+
+      <div class="contact delay_2">
+        <img class="emblem" src="img/discord_logo.svg" alt="discord" onclick="show_link('discord')"/>
+          <span class="discord" id="discord">Raigen93</span>
       </div>
     </div>
 

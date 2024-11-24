@@ -18,16 +18,15 @@ html {
 #main {
   margin: auto;
   margin-right: 0;
-  height: 90vh;
-  width: 85vw;
+  height: 90%;
+  width: 80%;
   opacity: 0;
 
-  background-color: #00010b;
-  background-image: url('img/concrete-wall.png');
+  background-color: rgba(0, 0, 0, 0.6);
   background-repeat: repeat;
 
-  border-top-left-radius: 15px;
-  border-bottom-left-radius: 15px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
   
   display: flex;
   justify-content: center;
@@ -92,6 +91,10 @@ html {
 }
 
 /* Element selectors */
+a {
+  color: goldenrod;
+}
+
 body {
   margin: 0;
   display: flex;
@@ -100,6 +103,11 @@ body {
   font-size: 1.25rem;
   height: 95vh;
   overflow-x: hidden;
+  min-height: 750px;
+}
+
+em {
+  color: goldenrod;
 }
 
 footer {
@@ -135,19 +143,30 @@ h5 {
 }
 
 /* Class selectors */
-.about_tab, .project_tab {
-  display: none;
-}
 
 .about_tab, .project_tab, .home_tab {
   /* border: 1px solid red; */
   padding: 5px;
   width: 100%;
+  animation: slideInRight 0.5s linear;
+
+  &:not(.active) {
+    display: none;
+  }
 
   p {
     margin-left: 10px;
-    text-indent: 10px;
   }
+}
+
+.about_tab {
+  height: 100%;
+}
+
+.blurb {
+  max-width: 800px;
+  margin: 20px auto;
+  text-indent: 15px;
 }
 
 .contact_holder {
@@ -155,25 +174,43 @@ h5 {
     width: 25%;
 
     .contact {
-    display: flex;
-    align-items: center;
-    justify-content: start;
-    background-color: #181a30;
-    border-radius: 5px;
-    margin: 3px;
+      display: flex;
+      align-items: center;
+      justify-content: start;
+      background-color: #181a30;
+      border-radius: 5px;
+      margin: 3px;
+      animation: bounceIn 0.5s;
 
+      &.delay_1 {
+        animation-delay: 0.25s;
+      }
+
+      &.delay_2 {
+        animation-delay: 0.5s;
+      }
+    
     .emblem {
       cursor: pointer;
     }
   }
 }
 
-.email, .github {
+.email, .github, .discord {
   transition: width 1s;
   font-size: 0.6em;
   overflow: hidden;
+  margin:auto 0;
   width: 0;
   cursor: pointer;
+}
+
+.email.show {
+  width: 132px;
+}
+
+.discord.show, .github.show {
+  width: 60px;
 }
 
 .emblem_holder {
@@ -194,18 +231,20 @@ h5 {
   /* border: 1px solid yellow; */
   width: 100%;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
+  height: 260px;
 
   .slide {
-    height: 250px;
+    height: 55%;
     width: auto;
     border-radius: 25px;
+    margin: 10px;
   }
 
   .slide:not(.active) {
-    height: 125px;
+    height: 25%;
     filter:blur(2px);
   }
 }
@@ -219,8 +258,9 @@ h5 {
   overflow: hidden;
 }
 
-.show {
-  width: 132px;
+.slide {
+  cursor: pointer;
+  transition: height 1s;
 }
 
 .spacer {
@@ -245,38 +285,65 @@ h5 {
 }
 
 @keyframes bounceIn {
-  0% { transform: translateY(-100%)}
-  50% { transform: translateY(50%)}
+  0% { transform: translateY(0%)}
+  50% { transform: translateY(-20%)}
+  90% { transform: translateY(20%)}
   100% { transform: translateY(0%)}
-
 }
 
-@media only screen and (max-width: 750px) {
-  header {
-    .header_container {
-      width: 100%;
-    }
-  }
+@media only screen and (max-width: 850px) {
   .contact {
     z-index: 101;
   }
 
-  #main {
-    width: 96vw;
+  #floater {
+    display: flex;
+    justify-content: space-between;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    background: rgba(0, 0, 0, 0.9);
+  }
+
+  #main_nav {
     align-items: end;
+    padding-right: 10px;
+    ul {
+      li {
+        text-align: right;
+      }
+    }
+    
   }
 
-  #nav_menu_btn {
-    display: block;
+  #main {
+    width: 95%;
+    height: 100%;
+    margin-top: 100px;
+    margin-bottom: 40px;
+    backdrop-filter: blur(1px);
   }
 
-  .slide {
-    height: auto;
-    max-width: 80%;
-    animation: fadeIn 2s;
+  body {
+    width: 100vw;
+    min-height: 90vh;
+    height: auto; 
+  }
 
-    &:not(.active) {
-      display: none;
+  .home_slider {
+    .slide {
+      animation: fadeIn 2s;
+      height: 80%;
+
+      &:not(.active) {
+        display: none;
+      }
     }
   }
+  
 }
