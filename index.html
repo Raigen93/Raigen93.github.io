@@ -11,7 +11,12 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Scope+One&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
 </head>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-kQpuBpAlN6L8wzjAnWkTfQg8AXT4+OmSh8HhZxf0XIWykI/nUQmW+f05N1q0xpL7" crossorigin="anonymous"></script>
 
 <script>
   let disabled_email = false;
@@ -21,7 +26,7 @@
 
     if (!element.classList.contains('show')) {
       if (to_show == "email" && !disabled_email) {
-        element.innerHTML = "<a href='mailto:raigen.griff@gmail.com' >raigen.griff@gmail.com</a>";
+        element.innerHTML = "<a class='myanchor' href='mailto:raigen.griff@gmail.com' >raigen.griff@gmail.com</a>";
         element.classList.add('show');
       } else if (to_show !== "email") {
         element.classList.add('show');
@@ -66,120 +71,231 @@
     slide_index = index == null ? (slide_index + 1) % slides.length: index;
   }
 
-  setInterval(slideshow, 5000);
+ function open_modal(contentId) {
+    document.getElementById("my_modal").classList.replace("d-none", "d-flex");
+    document.getElementById(contentId).classList.replace("d-none", "d-flex");
+}
+
+function close_modal(contentId) {
+    document.getElementById(contentId).classList.replace('d-flex', 'd-none');
+    document.getElementById("my_modal").classList.replace('d-flex', 'd-none');
+}
+
 
 </script>
 
-<body>
-  <section id="floater"> 
-    <div style="display: flex; flex-direction: column; margin-bottom: 10px; width: 200px;">
-      <h1>Alec J Griffiths</h1>
-      <h5>Web Developer</h5>
-    </div>
+<body class="custom">
 
-    <nav id="main_nav">
-      <ul>
-        <li class="about_link tab_link" onclick="change_tab('about')">About Me</li>
-        <li class="project_link tab_link" onclick="change_tab('project')">Projects</li>
-        <li class="home_link tab_link active" onclick="change_tab('home')">Home</li>
-      </ul>
-    </nav>
-  </section>
+  <div class="main mt-4 mx-auto mb-3">
 
-  <section id="main">
-    <div class="about_tab tab">
-      <p class="blurb">
-        Originally from Iowa, I have lived in the Orange Park and Oakleaf Plantation areas of Clay County, Florida, for many years. 
-        After nearly a decade as a professional welder, I decided to pivot my career and dedicated myself to studying web development while raising three children.
-     
-        When I'm not coding, I love spending quality time with my children by taking them fishing, baking together, and exploring arts and crafts.
-        I'm also an avid tabletop gamer and enjoy the occasional session of Dungeons and Dragons.
-      </p>
+    <section class="row px-2 mb-4">
 
-      <span style="margin-left: 10px;">Some things I have worked with are:</span>
-      <div style="margin-left: 20px; color: goldenrod;">
-        <label for="JS_list">JavaScript</label>
-        <ul name="JS_list" style="margin-top: 0;">
-          <li>jQuery</li>
-          <li>Svelte</li>
-          <li>React</li>
-        </ul>
+      <div class="col-lg-4 col-10 mx-5 mt-3 mb-2 left_side">
 
-        <label for="PHP_list">PHP</label>
-        <ul name="PHP_list" style="margin-top: 0;">
-          <li>CakePHP</li>
-          <li>Laravel</li>
-        </ul>
-      </div>
-    </div>
-    
-    <div class="project_tab tab">
-      This is the project tab.
-    </div>
-    
-    <div class="home_tab tab active">
-      <h4 style="margin-left: 4px;">Hello there, and welcome in!</h4>
+        <div class="section_header mb-2">
+          <h1>Alec J Griffiths</h1>
+          <h5>Software and Web Developer</h5>
+        </div>
 
-      <p>My name is Alec J Griffiths, and I am a Web Developer/Software Engineer based out of Jacksonville, Florida.</p>
+        <div class="contact_holder">
+          <div class="contact">
+            <img class="emblem" src="img/gmail-icon-2020-.svg" alt="GMail" onclick="show_link('email')">
+              <span class="email" id="email"></span>
+          </div>
+          
+          <div class="contact delay_1">
+            <img class="emblem" src="img/github-icon-2.svg" alt="GitHub" onclick="show_link('github')"/>
+              <span class="github" id="github"><a class=" myanchor" href="https://github.com/Raigen93" target="_blank">Raigen93</a></span>
+          </div>
 
-      <div class="home_slider">
-        <img class="slide active" src="img/IMG_5515.jpg"  data-slider="home" onclick="slideshow(0)"/>
-        <img class="slide" src="img/IMG_5445.jpg"  data-slider="home" onclick="slideshow(1)"/>
-        <img class="slide" src="img/IMG_4522.jpg"  data-slider="home" onclick="slideshow(2)"/>
-        <img class="slide" src="img/IMG_4289.jpg"  data-slider="home" onclick="slideshow(3)"/>
-        <img class="slide" src="img/IMG_4236.jpg"  data-slider="home" onclick="slideshow(4)"/>
+          <div class="contact delay_2">
+            <img class="emblem" src="img/discord_logo.svg" alt="discord" onclick="show_link('discord')"/>
+              <span class="discord" id="discord">Raigen93</span>
+          </div>
+        </div>
+      
       </div>
 
-      <p class="blurb">I currently work in the financial tech industry, while in my free time I contribute to <a href="https://tinydark.com/" target="_blank">Tinydark Studio</a> and the studio's proprietary GAM3 engine.
-        I enjoy working on a variety of projects and learning knew things, so if there's anything you need help with feel free to contact me.</p>
-    </div>
-  </section>
+      <section class="col-lg-8 col-11 mt-lg-5 mt-1 mycard_holder right_side">
+        <div class="mycard mb-3">
+          <p class="p-3 mb-2">
+            I am a Software Developer currently working in the financial tech industry, while in my free time I contribute to <a href="https://tinydark.com/" target="_blank">Tinydark Studio</a> 
+            by helping refine the proprietary GAM3 engine. I enjoy working on a variety of projects and learning knew things, so if there's anything you need help with feel free to contact me.
+          </p>
+          <p class="p-3 mb-2">
+            Originally from Iowa, I have lived in the Orange Park and Oakleaf Plantation areas of Clay County, Florida, for many years. 
+            After nearly a decade as a professional welder, I decided to pivot my career and dedicated myself to studying web development while raising three children.
+          </p>  
+          <p class="p-3 mb-2">
+            When I'm not coding, I love spending quality time with my children by taking them fishing, baking together, and exploring arts and crafts.
+            I'm also an avid tabletop gamer and enjoy the occasional session of Dungeons and Dragons.
+          </p>
+        </div>
 
-  <footer>
-    <div class="contact_holder">
-      <div class="contact">
-        <img class="emblem" src="img/gmail-icon-2020-.svg" alt="GMail" onclick="show_link('email')">
-          <span class="email" id="email"></span>
+        <div class="mycard open my-3" onClick="open_modal('software_content')">
+          <div class="row p-2">
+            <h5 class="col-6">Software Engineer</h5> 
+            <span class="col-6 date">February 2024 - Present</span>
+          </div>
+          
+          <p class="p-3 mb-2">
+           Working in the fintech sector, contributing to the development and implementation of custom features
+            tailored to client requirements. Focused on delivering high-quality solutions that address customer 
+            needs while prioritizing security, scalability, and performance.
+          </p>
+          
+          <div class="d-flex align-items-center justify-content-evenly p-1">
+            <span class="icon">
+              <img class="emblem" src="img/php_icon.png" alt="PHP" />
+            </span>
+            
+            <span class="icon">
+              <img class="emblem" src="img/JavaScript_Icon.png" alt="JavaScript" />
+            </span>
+            
+            <span class="icon">
+              <img class="emblem" src="img/react-2.svg" alt="React">
+            </span>
+            
+            <span class="icon">
+              <img class="emblem" src="img/bootstrap-4.svg" alt="Bootstrap">
+            </span>
+            
+            <span class="icon">
+              <img class="emblem" src="img/postgresql.svg" alt="PostgreSQL">
+            </span>        
+          </div>
+        </div>
+
+        <div class="mycard open my-3" onClick="open_modal('tinydark_content')"> 
+          <div class="row p-2">
+            <h5 class="col-6">Tinydark Studio</h5> 
+            <span class="col-6 date">January 2023 - Present</span>
+          </div>
+          
+          <p class="p-3 mb-2">
+            Work involves complete build out of new features from start to finish on both front and back ends. Working as a team member, I help identify and resolve various bugs and fixes.
+          </p>
+
+          <div class="d-flex align-items-center justify-content-evenly p-1">
+            <span class="icon">
+              <img class="emblem" src="img/cakephp-1.svg" alt="CakePHP" />
+            </span>
+            
+            <span class="icon">
+              <img class="emblem" src="img/JavaScript_Icon.png" alt="JavaScript" />
+            </span>
+            
+            <span class="icon">
+              <img class="emblem" src="img/svelte-1.svg" alt="Svelte">
+            </span>
+            
+            <span class="icon">
+              <img class="emblem" src="img/bootstrap-4.svg" alt="Bootstrap">
+            </span>
+            
+            <span class="icon">
+              <img class="emblem" src="img/mysql-logo-pure.svg" alt="MySQL">
+            </span>        
+          </div>
+        </div>
+
+      </section>
+
+    </section>
+
+  </div>
+
+   <section id="my_modal" class="align-items-center justify-content-center d-none">
+      <div id="modal_content" class="col-12 col-md-6 px-2 pb-2">
+        
+        <div id="tinydark_content" class="mx-auto my-auto d-none flex-column align-items-center justify-content-center">
+            
+            <div class="my_header d-flex py-2 m-0 align-items-center justify-content-center">
+              <h2 class="my-2">Tinydark Studio</h2>
+              
+              <span class="exit_button" onClick="close_modal('tinydark_content')">X</span>
+            </div>
+
+            <div class="highlights p-4">
+                <div class="highlight mb-3">
+                  <h5>Technologies Used</h5>
+                  <p>
+                    Work done for Tinydark Studio includes both front and back end development, utilizing: <br> <em>PHP (CakePHP), JavaScript (Svelte, jQuery), and a MySQL database</em>. 
+                  </p>
+                </div>
+
+                <div class="highlight mb-3">
+                  <h5>"Memories" Feature</h5>
+                  <p>
+                    The Memories feature allows for a player to "remember" a player that they have previously seen and any notable features about them, such as their physcial description and behavior.
+                  </p>
+
+                  <span class="image_holder">
+                    <img class="highlight_image" src="./img/remembering.png" />
+                      <span class="notice">*Image is of baseline untsyled GAM3</span>
+                  </span>
+                </div>
+                
+                <div class="highlight my-3">
+                  <h5>Codex</h5>
+                  <p>
+                    The Codex is a unique feature that allows players to access information about other characters they have encountered and their actions.
+                    It categorizes characters into two groups: those with nicknames (known) and those without (unknown). 
+                    Selecting a character opens an interface showcasing various ways to interact with them. At the bottom of the interface,
+                    players can view a detailed list of all the actions they have observed that character perform.
+                  </p>
+
+                  <span class="image_holder">
+                    <img class="highlight_image" src="./img/Codex-2.png" />
+                    <span class="notice">*Image is of baseline untsyled GAM3</span>
+                  </span>
+                </div>
+            </div>
+         
+        </div>
+
+
+        <div id="software_content" class="mx-auto my-auto d-none flex-column align-items-center justify-content-center">
+            <div class="my_header d-flex py-2 m-0 align-items-center justify-content-center">
+              <h2 class="my-2">Software Engineering</h2>
+              
+              <span class="exit_button" onClick="close_modal('software_content')">X</span>
+            </div>
+
+            <div class="highlights p-4">
+                <div class="highlight mb-3">
+                  <h5>Technologies Used</h5>
+                  <p>
+                    Work done as a software engineer has included both front and back end work, utlizing: <br> <em>PHP, Javascript (jQuery, React), and a PostgreSQL database</em>.
+                  </p>
+                </div>
+
+                <div class="highlight mb-3">
+                  <h5>Custom In-line Editing</h5>
+                  <p>
+                    This project involved developing a system that allows users to select different data tables for display. Based on the selected table, a dynamic table and corresponding entry form are generated, reflecting the retrieved data.
+                     Users can easily interact with the entries in the table, as each one features seamless inline inputs.
+                     These inputs include dropdowns for enum values, as well as fields for text and numbers, enabling users to edit entries directly by modifying the input fields.
+                  </p>
+                </div>
+                
+                <div class="highlight my-3">
+                  <h5>Note Viewer</h5>
+                  <p>
+                    The Note Viewer is a reusable component that allows users to view notes by calling a function and passing in the note's data, which can include both images and text.
+                     Upon invocation, the function dynamically attaches a modal to the body of the page, enabling the user to view the note in a dedicated space.
+                      If there are multiple notes, pagination is supported, displaying one note at a time. 
+                      Additionally, calling the function automatically loads all the necessary functions required for the Note Viewer's functionality, ensuring seamless interaction and a smooth user experience.
+                  </p>
+
+                </div>
+            </div>
+         
+        </div>
       </div>
-      
-      <div class="contact delay_1">
-        <img class="emblem" src="img/github-icon-2.svg" alt="GitHub" onclick="show_link('github')"/>
-          <span class="github" id="github"><a href="https://github.com/Raigen93" target="_blank">Raigen93</a></span>
-      </div>
+    </section>
 
-      <div class="contact delay_2">
-        <img class="emblem" src="img/discord_logo.svg" alt="discord" onclick="show_link('discord')"/>
-          <span class="discord" id="discord">Raigen93</span>
-      </div>
-    </div>
-
-    <div class="emblem_holder">
-      <span class="icon">
-        <img class="emblem" src="img/php_icon.png" alt="PHP" />
-      </span>
-
-      <span class="icon">
-        <img class="emblem" src="img/JavaScript_Icon.png" alt="JavaScript" />
-      </span>
-      
-      <span class="icon">
-        <img class="emblem" src="img/svelte-1.svg" alt="Svelte" />
-      </span>
-      
-      <span class="icon">
-        <img class="emblem" src="img/react-2.svg" alt="React">
-      </span>
-      
-      <span class="icon">
-        <img class="emblem" src="img/laravel_icon.png" alt="Laravel" />
-      </span>
-      
-      <span class="icon">
-        <img class="emblem" src="img/cakephp-1.svg" alt="CakePHP">
-      </span>
-    </div>
-  </footer>
 </body>
-
 
 </html>
