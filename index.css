@@ -66,23 +66,14 @@ em {
   color: var(--highlight-color);
 }
 
-h1 {
-  font-size: 45px;
-}
-
 .section_header {
   animation: fadeIn 5s;
-}
-
-h4, h3 {
-  font-weight: bold;
 }
 
 h4.tag, h3.tag {
   border: 2px solid var(--main-color);
   width: 50px;
   padding: 4px 10px;
-  font-size: 1.25em;
   border-radius: 50%;
   text-align: center;
   box-shadow: -2px 4px 4px var(--tertiary-color);
@@ -275,7 +266,7 @@ h4.tag, h3.tag {
 }
 
 /* Media Queries */
-@media only screen and (max-width: 1200px) {
+@media only screen and (max-width: 450px) {
   .mycard_holder {
     max-height: unset;
     height: auto;
