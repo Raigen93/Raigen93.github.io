@@ -82,10 +82,6 @@ h4.tag, h3.tag {
 }
 
 /* Class Selectors */
-.contact_holder {
-  display: flex;
-  width: 25%;
-}
 
 .contact {
   display: flex;
