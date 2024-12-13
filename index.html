@@ -74,14 +74,23 @@
  function open_modal(contentId) {
     document.getElementById("my_modal").classList.replace("d-none", "d-flex");
     document.getElementById(contentId).classList.replace("d-none", "d-flex");
-}
+  }
 
-function close_modal(contentId) {
-    document.getElementById(contentId).classList.replace('d-flex', 'd-none');
-    document.getElementById("my_modal").classList.replace('d-flex', 'd-none');
-}
+  function close_modal(contentId) {
+      document.getElementById(contentId).classList.replace('d-flex', 'd-none');
+      document.getElementById("my_modal").classList.replace('d-flex', 'd-none');
+  }
 
-
+  setTimeout(() => {
+    document.getElementById("my_modal").addEventListener("click", (e) => {
+      if (!document.getElementById("modal_content").contains(e.target)) {
+        document.getElementById("software_content").classList.replace('d-flex', 'd-none');
+        document.getElementById("tinydark_content").classList.replace('d-flex', 'd-none');
+        
+        document.getElementById("my_modal").classList.replace('d-flex', 'd-none');
+      }
+    })
+  }, 500);
 </script>
 
 <body class="custom">
@@ -118,17 +127,19 @@ function close_modal(contentId) {
 
       <section class="col-lg-8 col-11 mt-lg-5 mt-1 mycard_holder right_side">
         <div class="mycard mb-3">
-          <p class="p-3 mb-2">
-            I am a Software Developer currently working in the financial tech industry, while in my free time I contribute to <a href="https://tinydark.com/" target="_blank">Tinydark Studio</a> 
-            by helping refine the proprietary GAM3 engine. I enjoy working on a variety of projects and learning knew things, so if there's anything you need help with feel free to contact me.
-          </p>
-          <p class="p-3 mb-2">
-            Originally from Iowa, I have lived in the Orange Park and Oakleaf Plantation areas of Clay County, Florida, for many years. 
-            After nearly a decade as a professional welder, I decided to pivot my career and dedicated myself to studying web development while raising three children.
-          </p>  
-          <p class="p-3 mb-2">
-            When I'm not coding, I love spending quality time with my children by taking them fishing, baking together, and exploring arts and crafts.
-            I'm also an avid tabletop gamer and enjoy the occasional session of Dungeons and Dragons.
+          <p class="p-3 mb-2"> 
+            I'm a Software Developer working in the financial tech industry, and in my spare time, I contribute to 
+            <a href="https://tinydark.com/" target="_blank">Tinydark Studio</a>,
+            helping refine the GAM3 engine and implement new features. 
+            I love tackling different types of projects and always enjoy learning something new, so if you ever need assistance, don't hesitate to reach out.
+          </p> 
+          <p class="p-3 mb-2"> 
+            I was born in Iowa but have called the Orange Park and Oakleaf Plantation areas of Clay County, Florida, home since the early 2000s.
+            After spending almost a decade as a professional welder, I decided to switch gears and dive into web development, all while raising three kids. 
+          </p> 
+          <p class="p-3 mb-2"> 
+            Outside of coding, I cherish spending time with my kids—whether we're out fishing, baking something sweet, or getting creative with arts and crafts. 
+            I'm also a huge fan of tabletop games and enjoy a good Dungeons and Dragons session when I get the chance. 
           </p>
         </div>
 
@@ -139,7 +150,7 @@ function close_modal(contentId) {
           </div>
           
           <p class="p-3 mb-2">
-           Working in the fintech sector, contributing to the development and implementation of custom features
+            Working in fintech, contributing to the development and implementation of custom features
             tailored to client requirements. Focused on delivering high-quality solutions that address customer 
             needs while prioritizing security, scalability, and performance.
           </p>
@@ -174,7 +185,7 @@ function close_modal(contentId) {
           </div>
           
           <p class="p-3 mb-2">
-            Work involves complete build out of new features from start to finish on both front and back ends. Working as a team member, I help identify and resolve various bugs and fixes.
+            This involves full stack work from start to finish. Working as a team member, I help identify and resolve various bugs and fixes.
           </p>
 
           <div class="d-flex align-items-center justify-content-evenly p-1">
@@ -211,10 +222,10 @@ function close_modal(contentId) {
         
         <div id="tinydark_content" class="mx-auto my-auto d-none flex-column align-items-center justify-content-center">
             
-            <div class="my_header d-flex py-2 m-0 align-items-center justify-content-center">
-              <h2 class="my-2">Tinydark Studio</h2>
+            <div class="my_header d-flex py-2 align-items-center justify-content-center">
+              <h2 class="mb-2 mt-0">Tinydark Studio</h2>
               
-              <span class="exit_button" onClick="close_modal('tinydark_content')">X</span>
+              <img src="./img/cancel-close-svgrepo-com.svg" class="exit_button mt-0" onClick="close_modal('tinydark_content')">
             </div>
 
             <div class="highlights p-4">
@@ -233,7 +244,7 @@ function close_modal(contentId) {
 
                   <span class="image_holder">
                     <img class="highlight_image" src="./img/remembering.png" />
-                      <span class="notice">*Image is of baseline untsyled GAM3</span>
+                      <span class="notice">*Image is of baseline unstyled GAM3</span>
                   </span>
                 </div>
                 
@@ -248,7 +259,7 @@ function close_modal(contentId) {
 
                   <span class="image_holder">
                     <img class="highlight_image" src="./img/Codex-2.png" />
-                    <span class="notice">*Image is of baseline untsyled GAM3</span>
+                    <span class="notice">*Image is of baseline unstyled GAM3</span>
                   </span>
                 </div>
             </div>
@@ -260,7 +271,7 @@ function close_modal(contentId) {
             <div class="my_header d-flex py-2 m-0 align-items-center justify-content-center">
               <h2 class="my-2">Software Engineering</h2>
               
-              <span class="exit_button" onClick="close_modal('software_content')">X</span>
+              <img src="./img/cancel-close-svgrepo-com.svg" class="exit_button" onClick="close_modal('software_content')">
             </div>
 
             <div class="highlights p-4">
