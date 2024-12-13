@@ -277,7 +277,14 @@ h4.tag, h3.tag {
 /* Media Queries */
 @media only screen and (max-width: 1200px) {
   .mycard_holder {
-    max-height: 75vh;
+    max-height: unset;
+    height: auto;
+  }
+
+  #main, body.custom {
+    max-height: unset;
+    height: auto;
+    overflow-y: auto;
   }
 
   .highlight_image {
@@ -291,5 +298,13 @@ h4.tag, h3.tag {
 
   #modal_content {
     max-height: 80vh;
+  }
+
+  .left_side {
+    position: sticky;
+    background-color: black;
+    z-index: 5;
+    top: 0;
+    border-bottom: 1px solid var(--highlight-color);
   }
 }
