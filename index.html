@@ -20,30 +20,36 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-kQpuBpAlN6L8wzjAnWkTfQg8AXT4+OmSh8HhZxf0XIWykI/nUQmW+f05N1q0xpL7" crossorigin="anonymous"></script>
 
 <script>
+
   let disabled_email = false;
 
   function show_link(to_show) {
     let element = document.getElementById(to_show);
+    let links = document.querySelectorAll('.contact');
 
     if (!element.classList.contains('show')) {
-      if (to_show == "email" && !disabled_email) {
-        element.innerHTML = "<a class='myanchor' href='mailto:raigen.griff@gmail.com' >raigen.griff@gmail.com</a>";
+      if (to_show === "email") {
+        element.innerHTML = "<a class='myanchor' href='mailto:raigen.griff@gmail.com'>raigen.griff@gmail.com</a>";
         element.classList.add('show');
       } else if (to_show !== "email") {
         element.classList.add('show');
       }
 
+      links.forEach(link => {
+        if (link.classList.contains('show') && link.id !== to_show) {
+          link.classList.remove('show');
+        }
+      });
     } else {
       element.classList.remove('show');
-
-      if (to_show == "email") {
-        disabled_email = true;
-
-        setTimeout(() => {
-          element.innerHTML = "";
-          disabled_email = false;
-        }, 1000);
-      }
+    } 
+    
+    if (!(document.getElementById('email').classList.contains('show'))) {
+      disabled_email = true;
+      setTimeout(() => {
+        document.getElementById("email").innerHTML = "";
+        disabled_email = false;
+      }, 500);
     }
   }
 
@@ -116,17 +122,17 @@
         <div class="contact_holder">
           <div class="contact">
             <img class="emblem" src="img/gmail-icon-2020-.svg" alt="GMail" onclick="show_link('email')">
-              <span class="email" id="email"></span>
+              <span class="email contact" id="email"></span>
           </div>
           
           <div class="contact delay_1">
             <img class="emblem" src="img/github-icon-2.svg" alt="GitHub" onclick="show_link('github')"/>
-              <span class="github" id="github"><a class=" myanchor" href="https://github.com/Raigen93" target="_blank">Raigen93</a></span>
+              <span class="github contact" id="github"><a class=" myanchor" href="https://github.com/Raigen93" target="_blank">Raigen93</a></span>
           </div>
 
           <div class="contact delay_2">
             <img class="emblem" src="img/discord_logo.svg" alt="discord" onclick="show_link('discord')"/>
-              <span class="discord" id="discord">Raigen93</span>
+              <span class="discord contact" id="discord">Raigen93</span>
           </div>
         </div>
       
