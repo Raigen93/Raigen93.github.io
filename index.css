@@ -217,7 +217,11 @@ h4.tag, h3.tag {
   float: right;
   padding: 8px;
   border-radius: 5px;
-  background: unset;
+}
+
+.mycard.open {
+  background-color: rgba(75, 75, 75, 0.1);
+  box-shadow: -2px 2px 2px var(--tertiary-color);
 }
 
 .mycard.open:hover {
@@ -283,20 +287,7 @@ h4.tag, h3.tag {
     max-width: 99%;
   }
 
-  .mycard.open {
-    background-color: rgba(75, 75, 75, 0.2);
-    box-shadow: -2px 2px 2px var(--tertiary-color);
-  }
-
   #modal_content {
     max-height: 80vh;
-  }
-
-  .left_side {
-    position: sticky;
-    background-color: black;
-    z-index: 5;
-    top: 0;
-    border-bottom: 1px solid var(--highlight-color);
   }
 }
