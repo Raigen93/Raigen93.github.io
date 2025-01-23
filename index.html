@@ -93,6 +93,7 @@
       if (!document.getElementById("modal_content").contains(e.target)) {
         document.getElementById("software_content").classList.replace('d-flex', 'd-none');
         document.getElementById("tinydark_content").classList.replace('d-flex', 'd-none');
+        document.getElementById("personal_projects").classList.replace('d-flex', 'd-none');
         
         document.getElementById("my_modal").classList.replace('d-flex', 'd-none');
       }
@@ -135,20 +136,22 @@
       <section class="col-lg-8 col-11 mt-lg-5 mt-1 mt-md-4 mx-auto mycard_holder right_side">
         <div class="mycard mb-3">
           <p class="p-3 mb-2"> 
-            I'm a Software Developer working in the financial tech industry, and in my spare time, I contribute to 
+            I'm a Software Developer working in the financial tech industry. In my spare time, I contribute to 
             <a href="https://tinydark.com/" target="_blank">Tinydark Studio</a>,
             helping refine the GAM3 engine and implement new features. 
             I love tackling different types of projects and always enjoy learning something new, so if you ever need assistance, don't hesitate to reach out.
           </p> 
           <p class="p-3 mb-2"> 
-            I was born in Iowa but have called the Orange Park and Oakleaf Plantation areas of Clay County, Florida, home since the early 2000s.
-            After spending almost a decade as a professional welder, I decided to switch gears and dive into web development, all while raising three kids. 
+            Born in Iowa, I have called the Orange Park and Oakleaf Plantation areas of Clay County, Florida, home since the early 2000s.
+            After spending almost a decade as a professional welder, I decided to switch gears and dive into web development. 
           </p> 
           <p class="p-3 mb-2"> 
-            Outside of coding, I cherish spending time with my kids—whether we're out fishing, baking something sweet, or getting creative with arts and crafts. 
-            I'm also a huge fan of tabletop games and enjoy a good Dungeons and Dragons session when I get the chance. 
+            Outside of coding, I enjoy spending time with my kids. Fishing when the weather permits, making a mess in the kitchen together, or getting creative with arts and crafts. 
+            I'm also a huge fan of tabletop games and enjoy a good Dungeons and Dragons session. 
           </p>
         </div>
+
+        <h3>Work Highlights</h3>
 
         <div class="mycard open my-3" onClick="open_modal('software_content')">
           <div class="row p-2">
@@ -217,6 +220,38 @@
           </div>
         </div>
 
+        <div class="mycard open my-3" onClick="open_modal('personal_projects')">
+          <div class="row p-2">
+            <h5 class="col-6">Personal Projects</h5> 
+            <span class="col-6 date"></span>
+          </div>
+          
+          <p class="p-3 mb-2">
+            A collection of projects I've worked on in my free time, ranging from simple web pages to more complex applications.
+          </p>
+          
+          <div class="d-flex align-items-center justify-content-evenly p-1">
+            <span class="icon">
+              <img class="emblem" src="img/php_icon.png" alt="PHP" />
+            </span>
+
+            <span class="icon">
+              <img class="emblem" src="img/laravel_icon.png" alt="Laravel" />
+            </span>
+            
+            <span class="icon">
+              <img class="emblem" src="img/JavaScript_Icon.png" alt="JavaScript" />
+            </span>
+            
+            <span class="icon">
+              <img class="emblem" src="img/bootstrap-4.svg" alt="Bootstrap">
+            </span>
+            
+            <span class="icon">
+              <img class="emblem" src="img/mysql-logo-pure.svg" alt="MySQL">
+            </span>        
+          </div>
+        </div>
       </section>
 
     </section>
@@ -310,6 +345,51 @@
             </div>
          
         </div>
+
+         <div id="personal_projects" class="mx-auto my-auto d-none flex-column align-items-center justify-content-center">
+            
+            <div class="my_header d-flex py-2 align-items-center justify-content-center">
+              <h2 class="mb-2 mt-0">Personal Projects</h2>
+              
+              <img src="./img/cancel-close-svgrepo-com.svg" class="exit_button mt-0" onClick="close_modal('personal_projects')">
+            </div>
+
+            <div class="highlights p-4">
+                <div class="highlight mb-3">
+                  <h5>Technologies Used</h5>
+                  <p>
+                    My personal projects tend to involve utilizing<br> <em>PHP (Laravel), JavaScript (Svelte, jQuery), and a MySQL database</em>. 
+                  </p>
+                </div>
+
+                <div class="highlight mb-3">
+                  <h5>PayRoll Application</h5>
+                  <p>
+                    This project involved developing a payroll application that allows users to input their hours worked and view their pay stubs, as well as submitting time off requests. <br> Manager level users can 
+                    view and approve time off requests, as well as create projects. Each project has a number of budgetted hours, and every time a timesheet is submitted the number of used hours is updated (according to the employee's department).
+                    <br>
+
+                  </p>
+
+                  <span class="image_holder">
+                    <img class="highlight_image" src="./img/timesheet_submit.png" />
+                      <span class="notice">*Image features generated data</span>
+                  </span>
+
+                  <span class="image_holder">
+                    <img class="highlight_image" style="height: 550px;" src="./img/timesheet_sub_mobile.png" />
+                      <span class="notice">*Mobile View</span>
+                  </span>
+
+                  <span class="image_holder">
+                    <img class="highlight_image" style="height: 550px;" src="./img/pto_requests.png" />
+                      <span class="notice">*Mobile View of PTO Request Page</span>
+                  </span>
+                </div>
+            </div>
+         
+        </div>
+
       </div>
     </section>
 

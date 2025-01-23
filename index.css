@@ -182,6 +182,7 @@ h4.tag, h3.tag {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin-bottom: 25px;
 }
 
 .left_side {
