@@ -105,16 +105,20 @@
 
   <div class="main mt-md-4 mt-0 mt-md-3 mx-0 mx-md-auto mb-3">
 
-    <section class="row px-2  mb-4">
+    <section class="row px-md-2 px-0 mb-4">
 
-      <div class="col-lg-4 col-10 pl-2 ml-2 mt-3 mb-1 pb-2 left_side">
+      <div class="col-xl-4 col-11 col-md-8 mt-3 mb-1 pb-2 left_side mx-auto">
 
-        <div class="section_header p-3">
-          <h1>Alec J Griffiths</h1>
-          <h5>Software and Web Developer</h5>
+        <div class="section_header p-0 d-flex justify-content-start">
+          <img src="img/alec.jpg" style="height: 75px; width: 75px; border-radius: 20px; margin-right: 10px;" alt="Alec Griffiths" />
+
+          <div>
+            <h1>Alec J Griffiths</h1>
+            <h5>Software and Web Developer</h5>
+          </div>
         </div>
 
-        <div class="contact_holder d-flex align-items-center justify-content-evenly">
+        <div class="contact_holder d-flex align-items-center justify-content-evenly" style="max-width: 400px;">
           <div class="contact">
             <img class="emblem" src="img/gmail-icon-2020-.svg" alt="GMail" onclick="show_link('email')">
               <span class="email contact" id="email"></span>
@@ -130,129 +134,131 @@
               <span class="discord contact" id="discord">Raigen93</span>
           </div>
         </div>
-      
+
+        <div class="mx-auto mt-5">
+          <h5 class="mb-1 p-2">About Me</h5>
+
+          <div class="mycard_holder mb-2" style="height: auto;">
+            <div class="mycard mx-auto">
+              <p class="p-1 mb-1"> 
+                I'm a self-taught Software Developer working in the financial tech industry. In my spare time, I contribute to 
+                <a href="https://tinydark.com/" target="_blank">Tinydark Studio</a>,
+                helping refine the GAM3 engine and implement new features. 
+                I love tackling different types of projects and always enjoy learning something new, so if you ever need assistance, don't hesitate to reach out.
+              </p> 
+              <p class="p-1"> 
+                Outside of coding, I enjoy spending time with my kids. Fishing when the weather permits, making a mess in the kitchen together, or getting creative with arts and crafts. 
+                I'm also a huge fan of tabletop games and enjoy a good Dungeons and Dragons session. 
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <section class="col-lg-8 col-11 mt-lg-5 mt-1 mt-md-4 mx-auto mycard_holder right_side">
-        <div class="mycard mb-3">
-          <p class="p-3 mb-2"> 
-            I'm a Software Developer working in the financial tech industry. In my spare time, I contribute to 
-            <a href="https://tinydark.com/" target="_blank">Tinydark Studio</a>,
-            helping refine the GAM3 engine and implement new features. 
-            I love tackling different types of projects and always enjoy learning something new, so if you ever need assistance, don't hesitate to reach out.
-          </p> 
-          <p class="p-3 mb-2"> 
-            Born in Iowa, I have called the Orange Park and Oakleaf Plantation areas of Clay County, Florida, home since the early 2000s.
-            After spending almost a decade as a professional welder, I decided to switch gears and dive into web development. 
-          </p> 
-          <p class="p-3 mb-2"> 
-            Outside of coding, I enjoy spending time with my kids. Fishing when the weather permits, making a mess in the kitchen together, or getting creative with arts and crafts. 
-            I'm also a huge fan of tabletop games and enjoy a good Dungeons and Dragons session. 
-          </p>
-        </div>
+      <div class="col-11 col-md-8 mt-1 mx-auto right_side">
+          <h5 class="p-2" >Work Highlights</h5>
+          <div class="mycard_holder" style="max-height: 800px;">
+            <div class="mycard open my-3 mx-auto" onClick="open_modal('software_content')">
+              <div class="row p-2">
+                <h5 class="col-6">Software Engineer</h5> 
+                <span class="col-6 date">February 2024 - Present</span>
+              </div>
+              
+              <p class="p-3 mb-2">
+                A fintech company, work here involves contributing to the development and implementation of custom features
+                requested by the clients.
+              </p>
+              
+              <div class="d-flex align-items-center justify-content-evenly p-1">
+                <span class="icon">
+                  <img class="emblem" src="img/php_icon.png" alt="PHP" />
+                </span>
+                
+                <span class="icon">
+                  <img class="emblem" src="img/JavaScript_Icon.png" alt="JavaScript" />
+                </span>
+                
+                <span class="icon">
+                  <img class="emblem" src="img/react-2.svg" alt="React">
+                </span>
+                
+                <span class="icon">
+                  <img class="emblem" src="img/bootstrap-4.svg" alt="Bootstrap">
+                </span>
+                
+                <span class="icon">
+                  <img class="emblem" src="img/postgresql.svg" alt="PostgreSQL">
+                </span>        
+              </div>
+            </div>
 
-        <h3>Work Highlights</h3>
+            <div class="mycard open my-3 mx-auto" onClick="open_modal('tinydark_content')"> 
+              <div class="row p-2">
+                <h5 class="col-6">Tinydark Studio</h5> 
+                <span class="col-6 date">January 2023 - Present</span>
+              </div>
+              
+              <p class="p-3 mb-2">
+                A place where I can freely work on whatever project catches my eye, from minor css style changes to completely new features, every day is something new to do.
+              </p>
 
-        <div class="mycard open my-3" onClick="open_modal('software_content')">
-          <div class="row p-2">
-            <h5 class="col-6">Software Engineer</h5> 
-            <span class="col-6 date">February 2024 - Present</span>
-          </div>
-          
-          <p class="p-3 mb-2">
-            A fintech company, work here involves contributing to the development and implementation of custom features
-            requested by the clients.
-          </p>
-          
-          <div class="d-flex align-items-center justify-content-evenly p-1">
-            <span class="icon">
-              <img class="emblem" src="img/php_icon.png" alt="PHP" />
-            </span>
-            
-            <span class="icon">
-              <img class="emblem" src="img/JavaScript_Icon.png" alt="JavaScript" />
-            </span>
-            
-            <span class="icon">
-              <img class="emblem" src="img/react-2.svg" alt="React">
-            </span>
-            
-            <span class="icon">
-              <img class="emblem" src="img/bootstrap-4.svg" alt="Bootstrap">
-            </span>
-            
-            <span class="icon">
-              <img class="emblem" src="img/postgresql.svg" alt="PostgreSQL">
-            </span>        
-          </div>
-        </div>
+              <div class="d-flex align-items-center justify-content-evenly p-1">
+                <span class="icon">
+                  <img class="emblem" src="img/cakephp-1.svg" alt="CakePHP" />
+                </span>
+                
+                <span class="icon">
+                  <img class="emblem" src="img/JavaScript_Icon.png" alt="JavaScript" />
+                </span>
+                
+                <span class="icon">
+                  <img class="emblem" src="img/svelte-1.svg" alt="Svelte">
+                </span>
+                
+                <span class="icon">
+                  <img class="emblem" src="img/bootstrap-4.svg" alt="Bootstrap">
+                </span>
+                
+                <span class="icon">
+                  <img class="emblem" src="img/mysql-logo-pure.svg" alt="MySQL">
+                </span>        
+              </div>
+            </div>
 
-        <div class="mycard open my-3" onClick="open_modal('tinydark_content')"> 
-          <div class="row p-2">
-            <h5 class="col-6">Tinydark Studio</h5> 
-            <span class="col-6 date">January 2023 - Present</span>
-          </div>
-          
-          <p class="p-3 mb-2">
-            A place where I can freely work on whatever project catches my eye, from minor css style changes to completely new features, every day is something new to do.
-          </p>
+            <div class="mycard open my-3 mx-auto" onClick="open_modal('personal_projects')">
+              <div class="row p-2">
+                <h5 class="col-6">Personal Projects</h5> 
+                <span class="col-6 date"></span>
+              </div>
+              
+              <p class="p-3 mb-2">
+                A collection of projects I've worked on in my free time, ranging from simple web pages to more complex applications.
+              </p>
+              
+              <div class="d-flex align-items-center justify-content-evenly p-1">
+                <span class="icon">
+                  <img class="emblem" src="img/php_icon.png" alt="PHP" />
+                </span>
 
-          <div class="d-flex align-items-center justify-content-evenly p-1">
-            <span class="icon">
-              <img class="emblem" src="img/cakephp-1.svg" alt="CakePHP" />
-            </span>
-            
-            <span class="icon">
-              <img class="emblem" src="img/JavaScript_Icon.png" alt="JavaScript" />
-            </span>
-            
-            <span class="icon">
-              <img class="emblem" src="img/svelte-1.svg" alt="Svelte">
-            </span>
-            
-            <span class="icon">
-              <img class="emblem" src="img/bootstrap-4.svg" alt="Bootstrap">
-            </span>
-            
-            <span class="icon">
-              <img class="emblem" src="img/mysql-logo-pure.svg" alt="MySQL">
-            </span>        
+                <span class="icon">
+                  <img class="emblem" src="img/laravel_icon.png" alt="Laravel" />
+                </span>
+                
+                <span class="icon">
+                  <img class="emblem" src="img/JavaScript_Icon.png" alt="JavaScript" />
+                </span>
+                
+                <span class="icon">
+                  <img class="emblem" src="img/bootstrap-4.svg" alt="Bootstrap">
+                </span>
+                
+                <span class="icon">
+                  <img class="emblem" src="img/mysql-logo-pure.svg" alt="MySQL">
+                </span>        
+              </div>
+            </div>
           </div>
-        </div>
-
-        <div class="mycard open my-3" onClick="open_modal('personal_projects')">
-          <div class="row p-2">
-            <h5 class="col-6">Personal Projects</h5> 
-            <span class="col-6 date"></span>
-          </div>
-          
-          <p class="p-3 mb-2">
-            A collection of projects I've worked on in my free time, ranging from simple web pages to more complex applications.
-          </p>
-          
-          <div class="d-flex align-items-center justify-content-evenly p-1">
-            <span class="icon">
-              <img class="emblem" src="img/php_icon.png" alt="PHP" />
-            </span>
-
-            <span class="icon">
-              <img class="emblem" src="img/laravel_icon.png" alt="Laravel" />
-            </span>
-            
-            <span class="icon">
-              <img class="emblem" src="img/JavaScript_Icon.png" alt="JavaScript" />
-            </span>
-            
-            <span class="icon">
-              <img class="emblem" src="img/bootstrap-4.svg" alt="Bootstrap">
-            </span>
-            
-            <span class="icon">
-              <img class="emblem" src="img/mysql-logo-pure.svg" alt="MySQL">
-            </span>        
-          </div>
-        </div>
-      </section>
+      </div>
 
     </section>
 

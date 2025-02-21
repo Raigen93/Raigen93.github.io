@@ -57,18 +57,19 @@ a.myanchor:hover {
 
 body.custom {
   color: whitesmoke;
-  overflow: hidden;
-  height: 100vh;
+  overflow-y: auto;
+  height: auto;
   width: 100vw;
   background: unset;
+  min-height: 97vh;
+}
+
+h5 {
+  border-bottom: 1px solid var(--tertiary-color);
 }
 
 em {
   color: var(--highlight-color);
-}
-
-.section_header {
-  animation: fadeIn 5s;
 }
 
 h4.tag, h3.tag {
@@ -186,12 +187,12 @@ h4.tag, h3.tag {
 }
 
 .left_side {
-  max-width: 450px !important;
+  animation: fadeIn 5s;
 }
 
 .main {
-  min-height: 90vh;
-  max-width: 1300px;
+  min-height: 100%;
+  max-width: 1600px;
 }
 
 .my_header {
@@ -207,18 +208,29 @@ h4.tag, h3.tag {
   height: 700px;
   max-width: 700px !important;
   overflow-y: auto;
+  
+  background-color: rgba(0, 0, 0, 0.35);
+}
+
+#ramblings.mycard_holder {
+  max-height: 520px;
+  height: auto;
 }
 
 .mycard {
   max-width: 600px;
   float: right;
   padding: 8px;
-  border-radius: 5px;
+  border-radius: 2px;
 }
 
 .mycard.open {
   background-color: rgba(75, 75, 75, 0.1);
   box-shadow: -2px 2px 2px var(--tertiary-color);
+}
+
+.mycard.writing {
+  animation: slideInLeft 1s;
 }
 
 .mycard.open:hover {
@@ -229,6 +241,15 @@ h4.tag, h3.tag {
 .notice {
   font-size: 0.75rem;
   color: yellow;
+}
+
+.left_side {
+  min-width: 450px !important;
+  max-width: 750px !important;
+}
+
+.right_side {
+  max-width: 750px !important;
 }
 
 /* Animations */
@@ -268,16 +289,18 @@ h4.tag, h3.tag {
 }
 
 /* Media Queries */
-@media only screen and (max-width: 450px) {
+@media only screen and (max-width: 1250px) {
+  #ramblings.mycard_holder {
+    max-height: 250px;
+  }
+
   .mycard_holder {
     max-height: unset;
     height: auto;
   }
 
-  #main, body.custom {
-    max-height: unset;
-    height: auto;
-    overflow-y: auto;
+  .mycard.open {
+    max-width: 95%;
   }
 
   .highlight_image {
